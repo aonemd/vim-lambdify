@@ -8,3 +8,7 @@ var a = [
 var a2 = a.map(function(s){ return s.length });
 
 var a3 = a.map( s => s.length );
+
+function hello(msg = '') {
+  console.log("Hello,", msg);
+}
