@@ -17,14 +17,16 @@ function! vimlambdify#lambdify(highlight_group, klass, keyword)
 endf
 
 
-function! vimlambdify#lambdify_match(highlight_group, klass, pattern)
+function! vimlambdify#lambdify_match(highlight_group, klass, pattern, ...)
     " Conceal feature required to continue (vim ≥ 7.3)
     if !has('conceal')
         finish
     endif
 
+    let options = get(a:, 1, "")
+
     " Conceal 'function' with a lambda character
-    execute "syntax match " a:klass  a:pattern "conceal cchar=λ"
+    execute "syntax match"." ".a:klass." ".a:pattern." ".options." "."conceal cchar=λ"
 
     " Link up syntax
     execute "hi link" a:klass a:highlight_group
