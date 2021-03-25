@@ -5,7 +5,7 @@ function! vimlambdify#lambdify(highlight_group, klass, keyword)
     endif
 
     " Conceal 'function' with a lambda character
-    execute "syntax keyword " a:klass a:keyword "conceal cchar=λ"
+    execute "syntax keyword"." ".a:klass." ".a:keyword." "."conceal cchar=λ"
 
     " Link up syntax
     execute "hi link" a:klass a:highlight_group
