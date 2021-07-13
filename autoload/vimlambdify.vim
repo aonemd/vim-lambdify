@@ -1,3 +1,6 @@
+if exists('g:loaded_vimlambdify') | finish | endif
+let g:loaded_vimlambdify = 1
+
 hi! LambdaFunction guifg=#acbac9 guibg=NONE gui=bold ctermfg=236 ctermbg=NONE cterm=bold
 
 let g:lambda_hi_group = get(g:, "vimlambdify_lambda_hi_group", "LambdaFunction")
