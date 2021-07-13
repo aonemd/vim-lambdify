@@ -1,3 +1,7 @@
+hi! LambdaFunction guifg=#acbac9 guibg=NONE gui=bold ctermfg=236 ctermbg=NONE cterm=bold
+
+let g:lambda_hi_group = get(g:, "vimlambdify_lambda_hi_group", "LambdaFunction")
+
 function! vimlambdify#lambdify(highlight_group, klass, keyword)
     " Conceal feature required to continue (vim ≥ 7.3)
     if !has('conceal')

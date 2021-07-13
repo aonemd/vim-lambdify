@@ -31,6 +31,14 @@ Another option is manually copying the /after/syntax files into
 A third option is to clone this repo and run make, which will automatically
 do the work of copying the appropriate files to a location within ~/.vim
 
+There's a highlight group that's set by default for the conceal characters. To
+overwrite it, add the following to `~/.vimrc` with the your favorite highlight
+group:
+
+```viml
+let g:vimlambdify_lambda_hi_group = "Operator"
+```
+
 Overview
 --------
 

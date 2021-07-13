@@ -1,3 +1,3 @@
-call vimlambdify#lambdify("rubyKeyword", "rubyLambdaKeyword", "lambda")
-call vimlambdify#lambdify("rubyKeyword", "rubyLambdaKeyword", "proc")
-call vimlambdify#lambdify_match("rubyOperator", "rubyLambdaOperator", "\"->\"")
+call vimlambdify#lambdify(g:lambda_hi_group, "rubyLambdaKeyword", "lambda")
+call vimlambdify#lambdify(g:lambda_hi_group, "rubyLambdaKeyword", "proc")
+call vimlambdify#lambdify_match(g:lambda_hi_group, "rubyLambdaOperator", "\"->\"")

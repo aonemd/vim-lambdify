@@ -1,1 +1,1 @@
-call vimlambdify#lambdify("Statement", "scmNiceLambda", "lambda")
+call vimlambdify#lambdify(g:lambda_hi_group, "scmNiceLambda", "lambda")

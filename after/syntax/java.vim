@@ -1,1 +1,1 @@
-call vimlambdify#lambdify_match("javaOperator", "javaLambdaOperator", "\"->\"")
+call vimlambdify#lambdify_match(g:lambda_hi_group, "javaLambdaOperator", "\"->\"")

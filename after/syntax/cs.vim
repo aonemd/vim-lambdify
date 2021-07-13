@@ -1,1 +1,1 @@
-call vimlambdify#lambdify_match("csOperator", "csLambdaOperator", "\"=>\"")
+call vimlambdify#lambdify_match(g:lambda_hi_group, "csLambdaOperator", "\"=>\"")

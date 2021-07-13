@@ -1,1 +1,1 @@
-call vimlambdify#lambdify_match("haskellLambda", "haskellLambda", "/\\\\/")
+call vimlambdify#lambdify_match(g:lambda_hi_group, "haskellLambda", "/\\\\/")
