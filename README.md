@@ -1,35 +1,47 @@
-vim-lambdify
-=====================
+<div align="center">
+  <h1>
+    vim-lambdify
+  </h1>
 
-A vim plugin that conceals lambdas/inline functions with a lambda character for
-various languages
+  A vim plugin that conceals lambdas/inline functions with a lambda character
+  for various languages.
 
+  This is my fork of [calebsmith/vim-lambdify](https://github.com/calebsmith/vim-lambdify).
+</div>
 
 ![vim-lambdify-example](example/screenshot.png)
 
 
-Requirements
-------------
+## Requirements
+
 Vim >= 7.3 (for the conceal feature)
 
 Some file types rely on syntax files built-in to Vim >= 7.4
 
-Installation
-------------
+### N.B.
 
-If you are using ![Vundle](https://github.com/VundleVim/Vundle.vim) or ![NeoBundle](https://github.com/Shougo/neobundle.vim), add this to your list of bundles::
+The [vim-polyglot](https://github.com/sheerun/vim-polyglot) plugin is a dependency for the JavaScript arrow function (`=>`) to work properly, since the default syntax file is outdated.
 
-    Plugin 'calebsmith/vim-lambdify'
+For Java it's necessary to change this line in the default Java syntax file (`$VIMRUNTIME\syntax\java.vim`):
 
-For ![vim-plug](https://github.com/junegunn/vim-plug) use:
+```viml
+syn match javaError "<<<\|\.\.\|=>\|||=\|&&=\|[^-]->\|\*\/"
+```
 
-    Plug 'calebsmith/vim-lambdify'
+to:
 
-Another option is manually copying the /after/syntax files into
-~/.vim/after/syntax and /autoload/vimlambdify.vim into ~/.vim/autoload
+```viml
+syn match javaError "<<<\|\.\.\|=>\|||=\|&&=\|\*\/"
+```
+Otherwise the `->` operator will be highlighted as error by default. You can use the ![vim-java](https://github.com/vim-jp/vim-java) plugin, that already has this correction.
 
-A third option is to clone this repo and run make, which will automatically
-do the work of copying the appropriate files to a location within ~/.vim
+## Installation
+
+Install `aonemd/vim-lambdify` using a plugin manger such as:
+[vim-plug](https://github.com/junegunn/vim-plug),
+[NeoBundle](https://github.com/Shougo/neobundle.vim),
+[Vundle](https://github.com/gmarik/Vundle.vim), or
+[Pathogen](https://github.com/tpope/vim-pathogen).
 
 There's a highlight group that's set by default for the conceal characters. To
 overwrite it, add the following to `~/.vimrc` with the your favorite highlight
@@ -55,39 +67,18 @@ vim-lambdify makes efforts to ensure highlighting is kept.
 At the moment, the following languages have lambda conceal support through
 vim-lambdify:
 
+- JavaScript
+- TypeScript
+- PureScript
+- Haskell
+- Elm
 - Clojure
 - Scheme
 - Erlang
-- Haskell
-- Elm
 - Python
 - Ruby
-- JavaScript
 - Java
 - C#
-
-N.B.
-----
-
-The [vim-polyglot](https://github.com/sheerun/vim-polyglot) plugin is a dependency for the JavaScript arrow function (`=>`) to work properly, since the default syntax file is outdated.
-
-For Java it's necessary to change this line in the default Java syntax file (`$VIMRUNTIME\syntax\java.vim`):
-
-```vim
-syn match javaError "<<<\|\.\.\|=>\|||=\|&&=\|[^-]->\|\*\/"
-```
-
-to:
-
-```vim
-syn match javaError "<<<\|\.\.\|=>\|||=\|&&=\|\*\/"
-```
-Otherwise the `->` operator will be highlighted as error by default. You can use the ![vim-java](https://github.com/vim-jp/vim-java) plugin, that already has this correction.
-
-More will likely be added over time. These just happen to be languages I use
-frequently that have lambdas or something akin to them.
-
-Feel free to open a pull request to incorporate an unsupported language.
 
 Acknowledgements
 ----------------
